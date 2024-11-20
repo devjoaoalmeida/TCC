@@ -3,12 +3,14 @@
 
 <template>
   <header>
-    <div class="wrapper">
+    <div id="banner" class="wrapper">
       <nav>
-        <router-link to="/">Inicio</router-link>
-        <h2>FitClima</h2>
-        <router-link to="/sobre">Sobre</router-link>
-        <router-link to="/login">Login</router-link>
+        <router-link to="/dashboard" class="banner-itens">Painel de Controle</router-link>
+      </nav>
+      <h1>FitClima</h1>
+      <nav>
+        <router-link to="/sobre" class="banner-itens">Sobre</router-link>
+        <router-link to="/login" class="banner-itens">Login</router-link>
       </nav>
     </div>
   </header>
@@ -17,4 +19,5 @@
 </template>
 
 <style>
+@import "@/assets/app.css";
 </style>

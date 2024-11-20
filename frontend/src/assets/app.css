@@ -1,0 +1,19 @@
+.comfortaa{
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#banner{
+    background-color: yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner-itens{
+    text-decoration: none;
+    color: black;
+    padding: 25px;
+    font-size: large;
+}
