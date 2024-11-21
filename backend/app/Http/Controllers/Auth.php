@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class Auth extends Controller
@@ -17,7 +18,14 @@ class Auth extends Controller
             response()->json('not authorized', 401);
         }
 
-        Jwt::create($user);
+        $token = Jwt::create($user);
 
+        return response()->json([
+            'token' => $token,
+            'user' => [
+                'firstname' => $user->firstName,
+                'lastname' => $user->lastName
+            ]
+        ]);
     }
 }

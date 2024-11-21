@@ -1,8 +1,4 @@
 <template>
-  <div class="login">
-    <h1 id="my-login">This is an login page</h1>
-  </div>
-
   <form @submit.prevent="login">
     <input 
       type="text" 
@@ -16,25 +12,24 @@
     >
     <button type="submit">Login</button>
   </form>
-
 </template>
 
 <script setup>
   import http from '@/services/http.js';
-  import {reactive} from "vue";
+  import {reactive} from 'vue';
 
   const user = reactive({
-    email: '',
-    password: ''
+    email: 'champlin.rae@example.net',
+    password: '$2y$12$Wi2HXq1IaFCRk/5fPQIvCeVijK0J44ruotnfRReFtSGX42VvNBQz2'
   })
 
   async function login(){
     try {
-      const {data} = await http.post('/auth',user);
+      console.log(user);
+      const {data} = await http.post('/auth', user);
       console.log(data);
     } catch (error) {
       console.log(error?.responde?.data);
-
     }
   }
 
